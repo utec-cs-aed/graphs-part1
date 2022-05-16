@@ -3,7 +3,17 @@
 
 using namespace std;
 
+void execExample1();
+void execExample2();
+
 int main(int argc, char *argv[])
+{
+  execExample1();
+  execExample2();
+  return 0;
+}
+
+void execExample1()
 {
   Graph<char, float> graph;
   graph.insertVertex(1, 'J');
@@ -37,17 +47,14 @@ int main(int argc, char *argv[])
   graph.createEdge(7, 10, 51); // B - I | 51
   graph.createEdge(10, 9, 33); // I - G | 33
 
-  //display as adjacency list
+  //display the graph as adjacency list
   /*
    E:  I(29), J(5), A(11)
    J:  A(14), F(4)
   */
   graph.display();
 
-  //True, False
-  cout << "\nfindById(6): " << std::boolalpha << graph.findById(6) << endl;
-
-  //display object
+  //display an object
   /*
    E:  I(29), J(5), A(11)      
   */
@@ -55,8 +62,12 @@ int main(int argc, char *argv[])
   cout << graph.displayVertex(6) << endl;
 
   cout << "\nexecKruskal()\n";
-  Graph<char, float> mst = graph.execKruskal();
-  mst.display();
+  Graph<char, float> mst1 = graph.execKruskal();
+  mst1.display();
+
+  cout << "\nexecPrim()\n";
+  Graph<char, float> mst2 = graph.execPrim();
+  mst2.display();
 
   cout << "\nexecDFS()\n";
   Graph<char, float> dsf = graph.execDFS();
@@ -67,6 +78,8 @@ int main(int argc, char *argv[])
   bfs.display();
 
   cout << "isConnected(): " << std::boolalpha << graph.isConnected() << endl;
+}
 
-  return 0;
+void execExample2(){
+  //TODO: proponer otro ejercicio
 }
