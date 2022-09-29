@@ -59,7 +59,7 @@ void execExample1()
    E:  I(29), J(5), A(11)      
   */
   cout << "\ndisplayVertex(6)\n";
-  cout << graph.displayVertex(6) << endl;
+  graph.displayVertex(6);
 
   cout << "\nexecKruskal()\n";
   Graph<char, float> mst1 = graph.execKruskal();
