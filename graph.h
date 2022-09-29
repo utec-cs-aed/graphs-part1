@@ -35,7 +35,7 @@ public:
     bool deleteVertex(int id); // Deletes a vertex in the graph 
     void createEdge(int id1, int id2, TE w); // Creates a new edge in the graph with some data  
     bool deleteEdge(int startId, int endId); // Deletes an edge in the graph, it is not possible to search by the edge value, since it can be repeated 
-    TE &operator()(string startId, string endId); // Gets the value of the edge from the start and end vertexes
+    TE &operator()(int startId, int endId); // Gets the value of the edge from the start and end vertexes
     float density() const; // Calculates the density of the graph
     bool isDense(float threshold = 0.5) const; // Calculates the density of the graph, and determine if it is dense dependening on a threshold value    
     bool empty(); // If the graph is empty
